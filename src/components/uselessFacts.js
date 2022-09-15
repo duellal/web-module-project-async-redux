@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
 import { fetchFact } from '../actions'
 
@@ -9,10 +9,30 @@ const uselessFact = props => {
       fetchFact()
    }
 
+   useEffect(() => {
+      fetchFact()
+   }, [])
+
+   if (error) {
+      return (
+         <div>
+            <h3>There was an error: {error}</h3>
+         </div>
+      )
+   }
+
+   if (isFetching) {
+      return (
+         <div>
+            <h3>Please wait, fetching fact now...</h3>
+         </div>
+      )
+   }
+
    return (
       <>
          <div>
-            <h2>Here is an useless fact:</h2>
+            <h2>Here is a useless fact:</h2>
             <p>{fact}</p>
             <p>Source: {source}</p>
          </div>
