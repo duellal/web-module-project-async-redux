@@ -32,8 +32,8 @@ const uselessFact = props => {
    return (
       <>
          <div>
-            <h2>Here is a useless fact:</h2>
-            <p>{fact}</p>
+            <h2>Useless fact:</h2>
+            <p className='fact'>{fact}</p>
             <p>Source: {source}</p>
          </div>
          <button onClick={handleClick}>Get new fact</button>
@@ -44,7 +44,7 @@ const uselessFact = props => {
 const mapStateToProps = state => {
    return {
       fact: state.fact.text,
-      source: state.fact.source,
+      source: state.fact.source_url,
       isFetching: state.isFetching,
       error: state.error
    }

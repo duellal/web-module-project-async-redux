@@ -4,7 +4,7 @@ const initialState = {
    fact: {
       id: '',
       text: '',
-      source: ''
+      source_url: ''
    },
    isFetching: false,
    error: ''
