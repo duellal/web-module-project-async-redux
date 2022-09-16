@@ -1,10 +1,12 @@
 import React from 'react';
 import './App.css';
+import UselessFacts from './components/uselessFacts';
 
 function App() {
   return (
     <div className="App">
-      Async Redux Project
+      <h1>Get a Useless Fact!</h1>
+      <UselessFacts />
     </div>
   );
 }
